@@ -157,14 +157,7 @@ airport-analysis-dashboard/
 4. Test thoroughly
 5. Submit a pull request
 
-## License
-
-This project is open source and available under the MIT License.
-
-## Support
-
-For questions or support, please refer to the documentation or create an issue in the repository.
-
 ---
 
-**Built with ❤️ for aviation analytics and data visualization**
+**Built with ❤️ by GPS*
+
