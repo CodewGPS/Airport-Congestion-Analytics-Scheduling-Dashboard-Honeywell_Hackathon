@@ -1,0 +1,111 @@
+{
+  "meta": {
+    "generated": "2025-08-24 13:02:33"
+  },
+  "data": [
+    {
+      "date": "2025-08-15 00:00:00",
+      "tavg": 28.0,
+      "tmin": 24.2,
+      "tmax": 32.5,
+      "prcp": 80.0,
+      "snow": null,
+      "wdir": null,
+      "wspd": 2.1,
+      "wpgt": null,
+      "pres": 1002.1,
+      "tsun": null
+    },
+    {
+      "date": "2025-08-16 00:00:00",
+      "tavg": 29.8,
+      "tmin": 25.0,
+      "tmax": 33.6,
+      "prcp": 0.5,
+      "snow": null,
+      "wdir": null,
+      "wspd": 3.1,
+      "wpgt": null,
+      "pres": 1000.4,
+      "tsun": null
+    },
+    {
+      "date": "2025-08-17 00:00:00",
+      "tavg": 29.6,
+      "tmin": 25.6,
+      "tmax": 34.5,
+      "prcp": 1.0,
+      "snow": null,
+      "wdir": null,
+      "wspd": 4.3,
+      "wpgt": null,
+      "pres": 1001.1,
+      "tsun": null
+    },
+    {
+      "date": "2025-08-18 00:00:00",
+      "tavg": 30.8,
+      "tmin": 24.8,
+      "tmax": 34.2,
+      "prcp": 1.0,
+      "snow": null,
+      "wdir": null,
+      "wspd": 5.6,
+      "wpgt": null,
+      "pres": 1002.7,
+      "tsun": null
+    },
+    {
+      "date": "2025-08-19 00:00:00",
+      "tavg": 30.0,
+      "tmin": 26.7,
+      "tmax": 34.9,
+      "prcp": 0.0,
+      "snow": null,
+      "wdir": null,
+      "wspd": 5.7,
+      "wpgt": null,
+      "pres": 1001.9,
+      "tsun": null
+    },
+    {
+      "date": "2025-08-20 00:00:00",
+      "tavg": 31.4,
+      "tmin": 25.8,
+      "tmax": 35.2,
+      "prcp": 0.0,
+      "snow": null,
+      "wdir": null,
+      "wspd": 6.4,
+      "wpgt": null,
+      "pres": 1001.1,
+      "tsun": null
+    },
+    {
+      "date": "2025-08-21 00:00:00",
+      "tavg": 31.1,
+      "tmin": 25.9,
+      "tmax": 36.2,
+      "prcp": 0.5,
+      "snow": null,
+      "wdir": null,
+      "wspd": 5.0,
+      "wpgt": null,
+      "pres": 1000.6,
+      "tsun": null
+    },
+    {
+      "date": "2025-08-22 00:00:00",
+      "tavg": 30.2,
+      "tmin": 26.2,
+      "tmax": 34.8,
+      "prcp": 0.0,
+      "snow": null,
+      "wdir": null,
+      "wspd": 4.7,
+      "wpgt": null,
+      "pres": 999.6,
+      "tsun": null
+    }
+  ]
+}

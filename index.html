@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Airport Analysis Dashboard</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-plane-departure"></i>
+                    <h1>Airport Analysis Dashboard</h1>
+                </div>
+
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Navigation Tabs -->
+            <nav class="tab-navigation">
+                <button class="tab-btn active" data-tab="overview">
+                    <i class="fas fa-globe"></i>
+                    Overview
+                </button>
+                <button class="tab-btn" data-tab="bengaluru">
+                    <i class="fas fa-city"></i>
+                    Bengaluru (BLR)
+                </button>
+                <button class="tab-btn" data-tab="delhi">
+                    <i class="fas fa-landmark"></i>
+                    Delhi (DEL)
+                </button>
+                <button class="tab-btn" data-tab="comparison">
+                    <i class="fas fa-balance-scale"></i>
+                    Comparison
+                </button>
+            </nav>
+
+            <!-- Tab Content -->
+            <div class="tab-content">
+                <!-- Overview Tab -->
+                <div id="overview" class="tab-pane active">
+                    <div class="overview-grid">
+                        <div class="overview-card">
+                            <h3>Total Flights Analyzed</h3>
+                            <div class="metric">
+                                <span class="number" id="totalFlights">13,883</span>
+                                <span class="label">Flights</span>
+                            </div>
+                        </div>
+                        <div class="overview-card">
+                            <h3>Average Delay</h3>
+                            <div class="metric">
+                                <span class="number" id="avgDelay">2.0</span>
+                                <span class="label">Minutes</span>
+                            </div>
+                        </div>
+                        <div class="overview-card">
+                            <h3>On-Time Performance</h3>
+                            <div class="metric">
+                                <span class="number" id="ontimeRate">85.7%</span>
+                                <span class="label">Success Rate</span>
+                            </div>
+                        </div>
+                        <div class="overview-card">
+                            <h3>Peak Hours</h3>
+                            <div class="metric">
+                                <span class="number">6-9 AM</span>
+                                <span class="label">Morning Rush</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="chart-container">
+                        <div class="chart-card">
+                            <h3>Flight Volume Comparison</h3>
+                            <canvas id="flightVolumeChart"></canvas>
+                        </div>
+                        <div class="chart-card">
+                            <h3>Delay Distribution</h3>
+                            <canvas id="delayDistributionChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bengaluru Tab -->
+                <div id="bengaluru" class="tab-pane">
+                    <div class="city-header">
+                        <h2><i class="fas fa-city"></i> Bengaluru International Airport (BLR)</h2>
+                        <p>Comprehensive analysis of flight operations in Bengaluru and performance metrics</p>
+                    </div>
+                    
+                    <div class="city-stats">
+                        <div class="stat-item">
+                            <span class="stat-number" id="blrTotalFlights">5,174</span>
+                            <span class="stat-label">Total Flights</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number" id="blrAvgDelay">2.0</span>
+                            <span class="stat-label">Avg Delay (min)</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number" id="blrOntimeRate">88.5%</span>
+                            <span class="stat-label">On-Time Rate</span>
+                        </div>
+                    </div>
+
+                    <div class="charts-grid">
+                        <div class="chart-card">
+                            <h3>Flight Type Distribution</h3>
+                            <canvas id="blrFlightTypeChart"></canvas>
+                        </div>
+                        <div class="chart-card">
+                            <h3>Top Airlines</h3>
+                            <canvas id="blrAirlinesChart"></canvas>
+                        </div>
+                        <div class="chart-card">
+                            <h3>Hourly Traffic Pattern</h3>
+                            <canvas id="blrHourlyChart"></canvas>
+                        </div>
+                        <div class="chart-card">
+                            <h3>Delay Heatmap</h3>
+                            <canvas id="blrDelayHeatmap"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <!-- Delhi Tab -->
+                <div id="delhi" class="tab-pane">
+                    <div class="city-header">
+                        <h2><i class="fas fa-landmark"></i> Indira Gandhi International Airport (DEL)</h2>
+                        <p>Detailed insights into Delhi's aviation operations and efficiency metrics</p>
+                    </div>
+                    
+                    <div class="city-stats">
+                        <div class="stat-item">
+                            <span class="stat-number" id="delTotalFlights">8,709</span>
+                            <span class="stat-label">Total Flights</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number" id="delAvgDelay">7.6</span>
+                            <span class="stat-label">Avg Delay (min)</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number" id="delOntimeRate">82.9%</span>
+                            <span class="stat-label">On-Time Rate</span>
+                        </div>
+                    </div>
+
+                    <div class="charts-grid">
+                        <div class="chart-card">
+                            <h3>Flight Type Distribution</h3>
+                            <canvas id="delFlightTypeChart"></canvas>
+                        </div>
+                        <div class="chart-card">
+                            <h3>Top Airlines</h3>
+                            <canvas id="delAirlinesChart"></canvas>
+                        </div>
+                        <div class="chart-card">
+                            <h3>Hourly Traffic Pattern</h3>
+                            <canvas id="delHourlyChart"></canvas>
+                        </div>
+                        <div class="chart-card">
+                            <h3>Delay Heatmap</h3>
+                            <canvas id="delDelayHeatmap"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Comparison Tab -->
+                <div id="comparison" class="tab-pane">
+                    <div class="comparison-header">
+                        <h2><i class="fas fa-balance-scale"></i> Airport Performance Comparison</h2>
+                        <p>Bengaluru vs Delhi airport metrics</p>
+                    </div>
+                    
+                    <div class="comparison-grid">
+                        <div class="chart-card full-width">
+                            <h3>On-Time Performance Comparison</h3>
+                            <canvas id="ontimeComparisonChart"></canvas>
+                        </div>
+                        <div class="chart-card">
+                            <h3>Average Delay by Carrier</h3>
+                            <canvas id="carrierDelayChart"></canvas>
+                        </div>
+                        <div class="chart-card">
+                            <h3>Hourly Traffic Pattern Comparison</h3>
+                            <canvas id="dailyTrendChart"></canvas>
+                        </div>
+                        <div class="chart-card">
+                            <h3>Delay Severity Distribution</h3>
+                            <canvas id="delaySeverityChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Chatbot -->
+        <div class="chatbot-container">
+            <div class="chatbot-toggle" id="chatbotToggle">
+                <i class="fas fa-comments"></i>
+                <span>AI Assistant</span>
+            </div>
+            
+            <div class="chatbot-panel" id="chatbotPanel">
+                <div class="chatbot-header">
+                    <h3><i class="fas fa-robot"></i> Airport Analysis Assistant</h3>
+                    <button class="close-btn" id="closeChatbot">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                
+                <div class="chat-messages" id="chatMessages">
+                    <div class="message bot-message">
+                        <div class="message-content">
+                            <i class="fas fa-robot"></i>
+                            <p>Hello! I'm your Airport Analysis Assistant. I can help you understand flight data, delays, and airport performance. What would you like to know?</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="chat-input">
+                    <input type="text" id="chatInput" placeholder="Ask me about airport data...">
+                    <button id="sendMessage">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
